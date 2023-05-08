@@ -1,0 +1,43 @@
+<!-- 3. write a function to accept a string from user and show it in uppercase in a <p> tag on button 
+    click
+     write a function to show the string in lowercase in a <p> tag on button click on 
+    lowercase-button
+     write a function to show the string in titlecase in a <p> tag on button click on 
+    titlecase-button -->
+    
+  <html>
+    <head>
+      <script>
+        function fcase() {
+          let e = document.getElementById("i1");
+          console.log(e)
+          let v = e.value;
+          console.log(v);
+          document.getElementById("p1").innerText = v.toUpperCase();
+        }
+        function fcase1() {
+          let e1 = document.getElementById("i1");
+          console.log(e1)
+          let v = e1.value;
+          console.log(v);
+          document.getElementById("p1").innerText = v.toLowerCase();
+        }
+        function fcase2() {
+          let e2 = document.getElementById("i1");
+          console.log(e2)
+          let v = e2.value;
+          console.log(v);
+          document.getElementById("p1").innerText = v.slice(0,1).toUpperCase().concat(v.slice(1,v.length).toLowerCase());
+        }
+      </script>
+    </head>
+
+    <body>
+      <input type="text" placeholder="Enter A String" id="i1" />
+      <p id="p1"></p>
+      <button onclick="fcase()">uppercase</button>
+      <button onclick="fcase1()">lowercase</button>
+      <button onclick="fcase2()">titlecase</button>
+    </body>
+  </html>
+

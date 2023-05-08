@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <script>
+      function f1() {
+        let n1 = document.getElementById("num1").value;
+        let n2 = document.getElementById("num2").value;
+
+        switch (document.getElementById("s1").value) {
+          case "+":
+            let sum = parseInt(n1) + parseInt(n2);
+            document.getElementById("p1").innerText = `${n1} + ${n2} = ${sum}`;
+            break;
+          case "-":
+            let r = parseInt(n1) - parseInt(n2);
+            document.getElementById("p1").innerText = `${n1} - ${n2} = ${r}`;
+            break;
+          case "*":
+            let mul = parseInt(n1) * parseInt(n2);
+            document.getElementById("p1").innerText = `${n1} * ${n2} = ${mul}`;
+            break;
+          case "/":
+            let div = parseInt(n1) / parseInt(n2);
+            document.getElementById("p1").innerText = `${n1} / ${n2} = ${div}`;
+            break;
+          case "%":
+            let mod = parseInt(n1) % parseInt(n2);
+            document.getElementById("p1").innerText = `${n1} / ${n2} = ${div}`;
+            break;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <table>
+    <label> Enter Any Number </label><br />
+    <input type="number" id="num1" placeholder="0.0" /><br />
+    <input type="number" id="num2" placeholder="0.0" /><br /><br />
+    <label> Select Operation : </label>
+    <select id="s1" onchange="f1()">
+      <br />
+      <option value="" disabled selected hidden>Operation</option>
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+      <option value="%">%</option>
+    </select>
+
+    <p id="p1"></p>
+  </table>
+  </body>
+</html>

@@ -1,0 +1,66 @@
+DayOfDOB.html
+<html>
+  <head>
+    <link rel="stylesheet" href="C:\CDAC\HTML\DAY5\q3.css" type="text/css" />
+    <script>
+      function fun() {
+        let v1 = new Date(document.getElementById("d1").value);
+        let cd = new Date();
+
+        let month = v1.getMonth() + 1;
+        let dat = v1.getDate();
+        let year = cd.getFullYear();
+        let newD = new Date(`2024-${month}-${dat}`);
+
+        let day = "";
+        switch (newD.getDay()) {
+          case 1:
+            day = "Monday";
+            break;
+          case 2:
+            day = "Tuesday";
+            break;
+          case 3:
+            day = "Wednesday";
+            break;
+          case 4:
+            day = "Thursday";
+            break;
+          case 5:
+            day = "Friday";
+            break;
+          case 6:
+            day = "Saturday";
+            break;
+          case 0:
+            day = "Sunday";
+            break;
+          default:
+            day = "Invalid Input";
+            break;
+        }
+        document.getElementById(
+          "p1"
+        ).innerHTML = `Your Birthday Will Come this Year on <span id="s1"><i><b>${day}</b></i></span>`;
+      }
+    </script>
+  </head>
+
+  <body>
+    <br /><br />
+    <center>
+      <table border="0" id="t1">
+        <tbody>
+          <tr>
+            <td>
+              <p id="p2">Select Your DOB</p>
+              <input type="date" id="d1" onchange="fun()" />
+
+              <p id="p1"></p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </center>
+  </body>
+</html>

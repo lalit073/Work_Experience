@@ -1,0 +1,45 @@
+<!-- 1. Accept a date from the user and show the day on that date in words in a <p>
+    tag
+     -->
+<html>
+  <head>
+    <script>
+      function f1() {
+        let d = document.getElementById("d1").value;
+        let mydate = new Date(d);
+        let day = mydate.getDay();
+        switch (day) {
+          case 1:
+            document.getElementById("p1").innerText = "Monday";
+            break;
+          case 2:
+            document.getElementById("p1").innerText = "Tuesday";
+            break;
+          case 3:
+            document.getElementById("p1").innerText = "Wednesday";
+            break;
+          case 4:
+            document.getElementById("p1").innerText = "Thursday";
+            break;
+          case 5:
+            document.getElementById("p1").innerText = "Friday";
+            break;
+          case 6:
+            document.getElementById("p1").innerText = "Saturday";
+            break;
+          case 0:
+            document.getElementById("p1").innerText = "Sunday";
+            break;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Select A Date </h1><br/>
+    <h2>To Display Name of Day for that Date</h2>
+    <hr/>
+    <input type="date" id="d1" onchange="f1()" />
+    <p id="p1"></p>
+    <hr/>
+  </body>
+</html>
