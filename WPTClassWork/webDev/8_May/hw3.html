@@ -1,0 +1,24 @@
+<!-- 3. In HTML show a textfield and button. On button click show all the property 
+names of the textfield element using for-in -->
+<html>
+  <head>
+    <script>
+      function showproperties() {
+        let textbox = document.getElementById("b1");
+        let str = "";
+        for (x in textbox) {
+          str = str.concat(x ,"\n");
+          console.log(textbox.x,x)
+        }
+        document.getElementById("p1").innerText = str // we need to show str in id p1
+      }
+    </script>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="b1" />
+    </div>
+    <input type="button" onclick="showproperties()"  value="check"/>
+    <p id="p1"></p>
+  </body>
+</html>

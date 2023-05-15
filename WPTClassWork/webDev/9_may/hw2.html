@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <script src="C:\Users\IET\Desktop\jquery\jquery-3.6.4.min.js"></script>
+    <script>
+      $().ready(() => {
+        $("#b1").click(() => {
+          let fact = 1;
+          let num = $("#t1").val();
+          for (let i = 1; i <= num; i++) {
+            fact = fact * i;
+          }
+          $("#p1").text(fact);
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <input type="number" id="t1" />
+    <input type="button" id="b1" value="OK" />
+    <p id="p1"></p>
+  </body>
+</html>

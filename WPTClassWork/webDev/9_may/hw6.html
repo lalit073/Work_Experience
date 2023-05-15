@@ -1,0 +1,30 @@
+<!-- 6. Write an HTML that shows an AD that fadeIn on the screen
+Give a button-disappear = onclick of the button fadeOut the AD from the 
+screen -->
+<html>
+    <head>
+<script src="C:\Users\IET\Desktop\jquery\jquery-3.6.4.min.js"></script>
+<script>
+    $().ready(()=>{
+        // $(".d").click(()=>{
+        //     $("p").fadeIn()
+        // })
+        $("p").fadeIn(3000)
+        $("#b").click(()=>{
+            $(".ad").fadeOut()
+        })
+    })
+</script>
+    </head>
+<body>
+<!-- <div class="d" style="width:80px;height:80px;background-color:red"></div> -->
+<div class="ad">
+    <p style="display:none">Coding like poetry should be short and concise. </p>
+</div>
+<button id="b"> disappear</button>
+</body>
+
+</html>
+
+
+

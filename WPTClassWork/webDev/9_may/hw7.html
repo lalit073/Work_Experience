@@ -1,0 +1,22 @@
+<!-- 7. Try the slideDown and slideUP N as discussed in class-->
+<html>
+  <head>
+    <script src="C:\Users\IET\Desktop\jquery\jquery-3.6.4.min.js"></script>
+    <script>
+      $().ready(() => {
+        $(".b1").click(() => {
+          $("p").slideDown();
+        });
+
+        $("#b2").click(() => {
+          $("p").slideUp();
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p>Myself Jquery</p>
+    <button class="b1">slideDown</button>
+    <button id="b2">slideUP</button>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!-- 5. try out the array example to push Person details in array and show all person 
+names on button click as discussed in class -->
+<html>
+  <head>
+    <script>
+      var arr = [];
+      function Person(fn, ln) {
+        this.FirstName = fn;
+        this.LastName = ln;
+        this.showDetails = function () {
+          console.log(this.FirstName, this.LastName);
+        };
+      }
+      function addToArr() {
+        let fn = document.getElementById("i1").value;
+        let ln = document.getElementById("i2").value;
+        let obj1 = new Person(fn, ln);
+        arr.push(obj1);
+        window.alert(f1, " element Pushed");
+      }
+      function showArr() {
+        document.getElementById("p1").innerText = "";
+        for (let x of arr) {
+          document.getElementById("p1").innerText =
+            document.getElementById("p1").innerText + " " + x.FirstName;
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <center>
+      <label>FirstName:</label><input type="text" id="i1" />
+      <br />
+      <label>LastName :</label><input type="text" id="i2" />
+      <br />
+      <button onclick="addToArr()">Add to array</button>
+      <br />
+      <button onclick="showArr()">Show all</button>
+      <br />
+      <p id="p1"></p>
+    </center>
+  </body>
+</html>

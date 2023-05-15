@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Number_Table</title>
+    <script src="C:\Users\IET\Desktop\jquery\jquery-3.6.4.min.js"></script>
+    <script>
+      $().ready(() => {
+        $("#b1").click(() => {
+          let num = parseInt($("#n1").val()); //html textfield always returns string
+          let from = parseInt($("#n2").val());
+          let upto = parseInt($("#n3").val());
+          let product = 1;
+          for (let i = from; i <= upto; i++) {
+            product = num * i
+            $("#p1").append(`<tr><td>${num}*${i}</td><td>${product}</td></tr>`);
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <label>Enter Number</label><br />
+    <input type="number" id="n1" /><br />
+    <label>From</label><br />
+    <input type="number" id="n2" /><br />
+    <label>Upto</label><br />
+    <input type="number" id="n3" /><br /><br />
+    <button id="b1">Show</button>
+    <table id="p1" border="1"> </table>
+  </body>
+</html>

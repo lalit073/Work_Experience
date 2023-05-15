@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW_9_May</title>
+    <script src="C:\Users\IET\Desktop\jquery\jquery-3.6.4.min.js">
+    </script>
+    <script>
+        $().ready(()=>{
+            $("#b1").click(()=>{
+                $("#p1").text("konichiwa")
+                $("#p2").html("<i>konichiwa</i>")
+                $("#p3").html("<u>konichiwa</u>")
+            })
+        })
+    </script>
+
+</head>
+<body>
+    <input type="button" value="Ok" id="b1">
+    <p id="p1"></p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+</body>
+</html>
