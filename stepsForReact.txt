@@ -1,0 +1,62 @@
+C:\ReactApps>npm cache clear --force
+npm WARN using --force Recommended protections disabled.
+
+C:\ReactApps>npm config set registry http://registry.npmjs.org/
+
+C:\ReactApps>npx create-react-app myapp
+
+Creating a new React app in C:\ReactApps\myapp.
+
+Installing packages. This might take a couple of minutes.
+Installing react, react-dom, and react-scripts with cra-template...
+
+
+added 1424 packages in 22m
+
+235 packages are looking for funding
+  run `npm fund` for details
+
+Initialized a git repository.
+
+Installing template dependencies using npm...
+
+added 62 packages, and changed 1 package in 3m
+
+235 packages are looking for funding
+  run `npm fund` for details
+Removing template package using npm...
+
+npm notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+npm notice Beginning October 4, 2021, all connections to the npm registry - including for package installation - must use TLS 1.2 or higher. You are currently using plaintext http to connect. Please visit the GitHub blog for more information: https://github.blog/2021-08-23-npm-registry-deprecating-tls-1-0-tls-1-1/
+
+removed 1 package in 6s
+
+235 packages are looking for funding
+  run `npm fund` for details
+
+Created git commit.
+
+Success! Created myapp at C:\ReactApps\myapp
+Inside that directory, you can run several commands:
+
+  npm start
+    Starts the development server.
+
+  npm run build
+    Bundles the app into static files for production.
+
+  npm test
+    Starts the test runner.
+
+  npm run eject
+    Removes this tool and copies build dependencies, configuration files
+    and scripts into the app directory. If you do this, you can’t go back!
+
+We suggest that you begin by typing:
+
+  cd myapp
+  npm start
+
+Happy hacking!
+
+C:\ReactApps>
