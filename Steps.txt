@@ -1,0 +1,49 @@
+To create a login page using React and JSON format, you can use the following steps:
+
+Create a new React project using the command npx create-react-app my-app.
+Create a new file named users.json in the src folder and add the user details in JSON format.
+Create a new component named Login in the src folder.
+In the Login component, create a state object with properties for username, password, and isLoggedIn.
+Create two input fields for username and password and a button to submit the form.
+Add an event listener to the button that checks if the entered username and password match with any of the users in the users.json file.
+If there is a match, set the isLoggedIn property to true and redirect the user to the home page.
+If there is no match, display an error message.
+Here’s an example code snippet that demonstrates how you can read data from a JSON file in React:
+
+import users from './users.json';
+
+function Login() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const user = users.find((user) => user.username === username && user.password === password);
+    if (user) {
+      setIsLoggedIn(true);
+      // Redirect to home page
+    } else {
+      alert('Invalid username or password');
+    }
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <label>
+        Username:
+        <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} />
+      </label>
+      <br />
+      <label>
+        Password:
+        <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+      </label>
+      <br />
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+I hope this helps! Let me know if you have any other questions.
+
+Received message. To c
