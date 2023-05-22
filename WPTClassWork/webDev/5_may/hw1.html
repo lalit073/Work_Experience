@@ -10,6 +10,20 @@
         } else {
           document.getElementById("i1").readOnly = false;
         }
+        let cc = document.getElementById("c2");
+        // console.log(cb.checked)
+        if (cc.checked) {
+          document.getElementById("i2").readOnly = true;
+        } else {
+          document.getElementById("i2").readOnly = false;
+        }
+        let cd = document.getElementById("c3");
+        // console.log(cb.checked)
+        if (cd.checked) {
+          document.getElementById("i3").readOnly = true;
+        } else {
+          document.getElementById("i3").readOnly = false;
+        }
       }
     </script>
   </head>
@@ -20,8 +34,12 @@
     <input type="checkbox" id="c1" onchange="handler1()" /><br/><br/>
     <label> <pre>Your Opinion About 
   Above Program</pre></label><br/>
-    <Textarea rows="5" cols="20"></Textarea><br/>
+    <Textarea rows="5" cols="20" id="i2"></Textarea><br/>
+    <label for="c2">Click To make TF readonly : </label>
+    <input type="checkbox" id="c2" onchange="handler1()" /><br/><br/>
     <label>Feedback Please!!</label><br/>
-    <input type="text" placeholder="Area to be Filled With Words" /><br/>
+    <input type="text" id="i3" placeholder="Area to be Filled With Words" /><br/>
+    <label for="c3">Click To make TF readonly : </label>
+    <input type="checkbox" id="c3" onchange="handler1()" /><br/><br/>
   </body>
 </html>

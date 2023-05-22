@@ -1,34 +1,55 @@
 <html>
-<head>
+  <head>
     <script>
-        function convert()
-        {
-            
-            let rup = document.getElementById("r")
-            let dol = document.getElementById("d")
-            let eur = document.getElementById("e")
-            
+      function conv() {
+        let num = document.getElementById("i1").value;
+        let from = document.getElementById("s1").value;
+        let to = document.getElementById("s2").value;
+
+        if (from == "rupees" && to == "dollars") {
+          document.getElementById("p1").innerText = `${num * 0.012}`;
         }
-        
+        if (from == "rupees" && to == "euros") {
+          document.getElementById("p1").innerText = `${num * 0.011}`;
+        }
+        if (from == "dollars" && to == "rupees") {
+          document.getElementById("p1").innerText = `${num * 82.81}`;
+        }
+        if (from == "dollars" && to == "euros") {
+          document.getElementById("p1").innerText = `${num * 0.92}`;
+        }
+        if (from == "euros" && to == "rupees") {
+          document.getElementById("p1").innerText = `${num * 89.54}`;
+        }
+        if (from == "euros" && to == "dollars") {
+          document.getElementById("p1").innerText = `${num * 1.08}`;
+        }
+      }
     </script>
-</head>
-<body >
-    <label style="font-size: 1.5em;">Currency</label><br/><hr/>
-    <input id="i1" type="text" value="0"/><br/><br/>
+  </head>
+  <body>
+    <label style="font-size: 1.5em">Currency Converter</label><br />
+    <hr />
+    <input
+      id="i1"
+      type="number"
+      placeholder="Enter Amount for Conversion"
+    /><br /><br />
     <label>From</label>
-    <select id="s1" value="currency_from">
-        <option></option>
-        <option id="r" value="rupees">Rupees</option>
-        <option id="d" value="dollars">Dollars</option>
-        <option id="e" value="euros">Euros</option>
+    <select id="s1" name="s1">
+      <option value="" disabled selected hidden></option>
+      <option value="rupees">Rupees</option>
+      <option value="dollars">Dollars</option>
+      <option value="euros">Euros</option>
     </select>
     <label>To</label>
-    <select id="s2" value="currency_to">
-        <option></option>
-        <option id="r" value="rupees">Rupees</option>
-        <option id="d" value="dollars">Dollars</option>
-        <option id="e" value="euros">Euros</option>
+    <select id="s2" name="s1">
+      <option value="" disabled selected hidden></option>
+      <option value="rupees">Rupees</option>
+      <option value="dollars">Dollars</option>
+      <option value="euros">Euros</option>
     </select>
+    <button onclick="conv()">Convert</button>
     <p id="p1"></p>
-</body>
+  </body>
 </html>
