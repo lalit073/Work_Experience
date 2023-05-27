@@ -1,0 +1,305 @@
+Revision :
+Linked list?
+--- linear DS --- one to one relationship between elements
+--- dynamic in nature
+--- memory allocation is runtime --- heap --- random locations
+--- linked organization
+--- sequential access
+
+Linear SLL?
+--- Linked list
+--- every node must store the address of next node.
+--- maintaining address of head node is mandatory
+--- last node's next address must be NULL.
+--- traversal is possible only in forward direction.
+
+Circular SLL?
+--- SLL, but last node's next contains the address of first node.
+--- No node's next address contains NULL (except when the CSLL is empty).
+--- Maintaining only the address of tail is efficient.
+
+
+Linear DLL?
+--- linked list
+--- each node must store the address of next as well as previous node.
+--- head and/or tail address can be maintained.
+--- last node's next and first node's prev addresses must be NULL.
+--- traversal is possible in both directions -- forward and backward
+
+
+Circular DLL?
+--- DLL, but last node's next contains the address of first node and first node's
+    prev contains address of last node.
+--- No node's next address and prev address contains NULL (except when the CDLL is empty).
+--- Maintaining only the address of tail or the address of head is efficient.
+
+-------------------------------------------------------------------------------------------------------
+
+Stack :
+
+--- It is a linear data structure --- elements are arranged in order, one-to-one
+    relationship between elements.
+--- It is dynamic in nature means it can grow or shrink during execution time
+    (but not the static stack).
+--- At a time we can insert one element to the stack and remove one element
+    from the stack.
+--- Only one end of the stack is kept opened means we can do insertion or 
+    deletions from that one end only (like a bottle), this end is called top
+    end.
+--- The element which is inserted last will be removed first, so stack works
+    in LIFO manner (Last In First out) --- Sometimes called as FILO (First in
+    Last Out).
+--- Stack is visualized vertically.
+
+
+As stack is a data structure, we define it by using a triplet - D,F,A
+
+Suppose we are maintaining the stack of chairs.
+
+D : Data objects : chair
+F : Functions :
+Basic functions :
+a) init() -- initialization of a stack
+b) push() --- inserting a new chair at the top of the stack
+c) pop() --- removing one chair from the top of the stack
+d) isempty() --- check whether the stack is empty or not --- returns true
+                 if no chair in the stack otherwise false.
+e) peek() --- viewing the topmost chair --- topmost element --- not removing
+              it
+
+Additional function for static stack :
+f) isfull() --- checking whether the stack is full or not -- returns true
+                if stack is full (chair stack touches to the roof of hall) 
+                otherwise returns false --- applicable only to static stack.
+
+A : Axioms (rules)  
+a) Insertions and deletions must be done from one end (i.e. top).
+b) At a time only one element must be pushed or popped.
+c) The element i.e. chair which is pushed last must be popped first (LIFO).
+
+--------------------------------------------------------------------------------------------
+
+Implementation of Stack :
+
+There are two ways to implement the stack : using array and using linked list.
+
+a) Stack implementation using array (Static stack) : static implementation
+
+With array, we need to maintain two things for the stack :
+1. An array of same type as that of the elements that we want to push into the
+   stack.
+2. The position of the top element : As we are using array, the top is an integer
+   variable which contains the index position of the topmost element.
+   top is a variable which contains the index of topmost element.
+
+To combine these two things under one data structure, stack we use strcture.
+
+// Static stack definition
+
+
+For e.g. to maintain integer stack,
+
+typedef struct stack
+{
+   int data[100];
+   int top;
+}INTSTACK;
+
+In main() or any function -- we declare a variable of this structure,
+  INTSTACK st;
+
+
+
+To maintain float stack,
+
+
+typedef struct stack
+{
+   float data[100];
+   int top;
+}FLOATSTACK;
+
+In main() or any function -- we declare a variable of this structure,
+  FLOATSTACK st;
+
+
+
+To maintain the stack of names of student,
+
+typedef struct stack
+{
+   char data[100][50];// 100 names, every name can have maximum 50 characters
+   int top;
+}NAMESTACK;
+
+In main() or any function -- we declare a variable of this structure,
+  NAMESTACT names;
+
+
+To maintain the stack of records of student,
+typedef struct stud
+{
+    int rollno;
+    char name[50];
+    float percentage;
+}STUD;
+
+
+typedef struct stack
+{
+    STUD data[100];
+    int top;   
+}STUD_REC_STACK;
+
+
+In main() or any function, we declare variable as,
+   STUD_REC_STACK st;
+
+---------------------------------------------------------------------------------------
+
+Functions on static stack :
+
+Suppose we have declared an integer stack of size 5.
+
+# define MAX 5
+
+typedef struct stack
+{
+   int data[MAX];
+   int top;
+}INTSTACK;
+
+We have declared the stack variable in the function as -
+  INTSTACK st;
+
+
+1. init() : initialization of stack
+--- In C language, by default if the variable is not initialized then it contains
+    garbage.
+--- Therefore we have assign some initial value --- more importantly to the
+    top variable to indicate the stack is empty initially. 
+
+
+void init(INTSTACK *stack)
+{
+  int i; 
+  stack->top=-1;
+  for(i=0;i<MAX;i++)
+    stack->data[i]=-1;
+}
+
+
+-------------------------------------------------------------------------------------
+
+2. push() : insert an element at top of the stack.
+
+Steps :
+a. Check whether stack is full or not. If full, show error msg.
+b. If not full, increase the top index by 1 and store the new value at that
+   index position in the array.
+
+void push(INSTACK *stack,int value)
+{
+   if(isfull(*stack))
+      printf("\nStack full..");
+   else
+   {
+     (stack->top)++;
+     stack->data[stack->top]=value;
+   }
+}
+
+We call this function as --
+    push(&st,n);
+
+-------------------------------------------------------------------------------------
+
+
+3. isfull() : check whether stack is full or not.
+--- If top == MAX -1 then stack is full so return true (1), otherwise return false(0).
+
+int isfull(INTSTACK stack)
+{
+  if(stack->top==MAX-1)
+     return 1; 
+  return 0;
+}   
+  
+-------------------------------------------------------------------------------------
+
+4. pop() : remove the topmost element
+Steps :
+a. Check whether stack is empty or not.  If yes show the error msg.
+b. If stack is not empty, fetch or retrieve the topmost value (i.e. from index
+   top) from the array. Decrement the top by 1.
+
+int pop(INTSTACK *stack)
+{
+   int value;
+   if(isempty(*stack))
+   {
+     printf("\nStack empty...");
+     return -1;
+   }
+   else
+   {
+      value=stack->data[stack->top]);
+      (stack->top)--; // --(stack->top);
+      return value;
+   }
+}
+
+
+     OR
+
+int pop(INTSTACK *stack)
+{
+   if(isempty(*stack))
+   {
+     printf("\nStack empty...");  
+     return -1;
+   }
+   else
+     return(stack->data[(stack->top)--]);     
+   
+}
+
+-------------------------------------------------------------------------------------
+
+5. isempty() : check whether stack is empty or not, return true (1) if empty,
+   otherwise return false (0).
+
+int isempty(INTSTACK stack)
+{
+  if(stack.top==-1)
+    return 1;
+  else
+    return 0;
+}
+
+------------------------------------------------------------------------------------
+
+6. peak() : fetch or retrieve the topmost element without removing it.
+
+int peek(INTSTACK stack)
+{
+   if(isempty(stack))
+   {
+     printf("\nStack empty...");  
+     return -1;
+   }
+   else
+     return(stack->data[stack->top]);     
+   
+}
+
+-------------------------------------------------------------------------------------------
+
+Stack overflow condition : we are trying to perform push operation on the full stack.
+
+Stack underflow condition : we are trying to perform pop operation on empty stack.
+
+The elements from the static stack are logically deleted by maintaining the
+topmost element position, they are not physically deleted.
+
+Time complexity of all operations of static stack is constant i.e. O(1).
